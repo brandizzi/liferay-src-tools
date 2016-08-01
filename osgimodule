@@ -1,0 +1,17 @@
+#!/usr/env bash
+readonly DIR=$1
+
+Start="$PROJECT_HOME/$DIR"
+
+while [ ! -f "${Start}/bnd.bnd" ]
+do
+  if [ "$Start" = "$PROJECT_HOME" ]
+  then
+    echo 'No module here'
+    exit 1
+  fi
+  Start=$( dirname "$Start" )
+done
+
+echo $Start
+
