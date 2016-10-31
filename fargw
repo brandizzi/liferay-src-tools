@@ -1,0 +1,9 @@
+#!/usr/env bash
+while read m
+do
+  cd $m
+  dset
+  gradlew $*
+  rset
+  cd -
+done
