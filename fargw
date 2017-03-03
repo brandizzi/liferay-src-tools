@@ -1,9 +1,17 @@
 #!/usr/env bash
+
+if which gradlew
+then
+  GRADLE_CMD=gradlew
+else
+  GRADLE_CMD=gradle
+fi
+
 while read m
 do
   cd $m
   dset
-  gradlew $*
+  $GRADLE_CMD $*
   rset
   cd -
 done
