@@ -6,10 +6,11 @@ then
 else
   GRADLE_CMD=gradle
 fi
-
+echo   $GRADLE_CMD $*
 while read m
 do
   cd $m
+  pwd
   dset
   $GRADLE_CMD $*
   rset
