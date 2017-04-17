@@ -1,12 +1,7 @@
 #!/usr/env bash
 
-if which gradlew
-then
-  GRADLE_CMD=gradlew
-else
-  GRADLE_CMD=gradle
-fi
-echo   $GRADLE_CMD $*
+GRADLE_CMD=$LIFERAY_PORTAL_PROJECT/gradlew
+
 while read m
 do
   cd $m
