@@ -1,6 +1,6 @@
 #!/usr/env bash
 
-GRADLE_CMD=$LIFERAY_PORTAL_PROJECT/gradlew
+GRADLE_CMD=/home/adam/software/liferay-portal/gradlew
 
 while read m
 do
