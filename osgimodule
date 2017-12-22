@@ -1,7 +1,12 @@
 #!/usr/env bash
 readonly DIR=$1
 
-Start="$PROJECT_HOME/$DIR"
+if [[ $DIR = /* ]]
+then
+  Start="$DIR"
+else
+  Start="$PROJECT_HOME/$DIR"
+fi
 
 while [ ! -f "${Start}/bnd.bnd" ]
 do
