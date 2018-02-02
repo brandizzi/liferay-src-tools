@@ -12,7 +12,7 @@ while [ ! -f "${Start}/bnd.bnd" ]
 do
   if [ "$Start" = "$PROJECT_HOME" ]
   then
-    (>&2 echo 'No module here')
+    (>&2 echo 'No module in' $DIR)
     exit 1
   fi
   Start=$( dirname "$Start" )
