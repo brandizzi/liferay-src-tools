@@ -6,8 +6,6 @@ while read m
 do
   cd $m
   pwd
-  dset
   $GRADLE_CMD $*
-  rset
   cd -
 done
