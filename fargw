@@ -6,6 +6,6 @@ while read m
 do
   cd $m
   pwd
-  $GRADLE_CMD $*
+  sh -c "$GRADLE_CMD $* < /dev/null"
   cd -
 done
