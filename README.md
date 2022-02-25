@@ -43,7 +43,7 @@ First, you get a list of modules using `osgimodule`:
 
 ## lrdeptree.sh
 
-`lrdeptree.sh` reads paths to Liferay modules from the standard input, and prints all the dependencies of that module:
+`lrdeptree.sh` reads paths to Liferay modules from the standard input, and prints all other Liferay modules it depens on:
 
     $ echo modules/apps/calendar/calendar-api/ | lrdeptree.sh 
     /home/adam/software/liferay-portal/modules/apps/calendar/calendar-api/
