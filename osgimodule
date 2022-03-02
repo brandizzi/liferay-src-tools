@@ -1,11 +1,24 @@
 #!/usr/env bash
+set -o errexit
+
 readonly DIR=$1
+
+if [ -z ${PROJECT_HOME} ]
+then
+  PROJECT_HOME=$(git rev-parse --show-toplevel)
+fi
 
 if [[ $DIR = /* ]]
 then
   Start="$DIR"
 else
   Start="$PROJECT_HOME/$DIR"
+fi
+
+if [ ! -d ${Start} ] && [ ! -f ${Start} ]
+then
+  echo "Error: ${Start} not found!!!"
+  exit -1
 fi
 
 while [ ! -f "${Start}/bnd.bnd" ]

@@ -1,4 +1,10 @@
 #!/usr/env bash
+set -o errexit
+
+if [ -z ${PROJECT_HOME} ]
+then
+  PROJECT_HOME=$(git rev-parse --show-toplevel)
+fi
 
 MODULES=${1:-$(mktemp)}
 PROJECT_HOME=${2:-$PROJECT_HOME}
