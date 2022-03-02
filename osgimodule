@@ -8,6 +8,12 @@ else
   Start="$PROJECT_HOME/$DIR"
 fi
 
+if [ ! -d ${Start} ] && [ ! -f ${Start} ]
+then
+  echo "Error: ${Start} not found!!!"
+  exit -1
+fi
+
 while [ ! -f "${Start}/bnd.bnd" ]
 do
   if [ "$Start" = "$PROJECT_HOME" ]
